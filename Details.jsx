@@ -207,7 +207,7 @@ const Deatils = (props) => {
 
     return (
       <div style={{ height: 490, width: '100%' }}>
-        <h1 style={{ padding: "60px",background: "#1abc9c",color: "white",fontSize: "30px",textAlign: "center",textTransform: "uppercase"}}>CUSTOMER LISTS</h1>
+        <h1 style={{ padding: "60px",background: "rgb(197, 191, 191)",color: "white",fontSize: "30px",textAlign: "center",textTransform: "uppercase"}}>CUSTOMER LISTS</h1>
         <div style={{display: "flex",    marginTop:"13px",marginRight: "4px",justifyContent:"flex-end"}}>   
               <span>Sort Bid AS</span>   
                 <Toggle style={{margin: "0px 5px"}}  onText="Asc" offText="Descending" default="Ascending" onChange={() => BidsMinMax()}/>  
