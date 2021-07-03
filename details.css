@@ -1,0 +1,12 @@
+.MuiDataGrid-columnHeaderTitleContainer {
+    color: black;
+    font-size: 20px;
+}
+.MuiTablePagination-toolbar{
+    color: black;
+    height: auto;
+    padding-right: 2px;
+}
+.MuiDataGrid-cell{
+    align-content: center;
+}
