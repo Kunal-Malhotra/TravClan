@@ -20,7 +20,7 @@ const Deatils = (props) => {
       return () => {
           setData([]);
       };
-    },[]);
+    },[loading]);
 
     const View = (data) => {
       console.log(data);
@@ -58,9 +58,9 @@ const Deatils = (props) => {
               return el;
             })         
             // resp.sort()
-         {toggle === true ?
+         toggle === true ?
             resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? 0 : b.bids[0].amount - a.bids[0].amount}) : 
-            resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? -1 : a.bids[0].amount - b.bids[0].amount})}
+            resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? -1 : a.bids[0].amount - b.bids[0].amount})
             console.log(resp) 
             setData(resp) 
           }
@@ -70,51 +70,7 @@ const Deatils = (props) => {
         catch (error) {
              setLoading(false);
            }
-    }
-    // const DataApi4 = () => {
-    //   console.log("clicked2");
-    //   setLoading(true);
-    //   try {
-    //       fetch(`https://intense-tor-76305.herokuapp.com/merchants `)
-    //       .then(resp => resp.json())
-    //       .then(resp => {
-    //         resp.map((el) => {
-    //           el.bids=el.bids.sort(ascsort)
-    //           return el;
-    //         })         
-    //         resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? -1 : a.bids[0].amount - b.bids[0].amount})
-    //         console.log(resp) 
-    //         setData(resp) 
-                       
-    //       }
-    //         )
-    //            setLoading(false)
-    //        } 
-    //     catch (error) {
-    //          setLoading(false);
-    //        }
-    // }
-    // const DataApi3 = () => {
-    //   setLoading(true);
-    //   try {
-    //       fetch(`https://intense-tor-76305.herokuapp.com/merchants `)
-    //       .then(resp => resp.json())
-    //       .then(resp => {
-    //         resp.map((el) => {
-    //           el.bids=el.bids.sort(dessort)
-    //           return el;
-    //         })
-    //         resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? -1 : a.bids[0].amount - b.bids[0].amount})
-    //         setData(resp)
-    //         console.log(resp)
-    //       },          
-    //         )
-    //            setLoading(false)
-    //        } 
-    //     catch (error) {
-    //          setLoading(false);
-    //        }
-    // }
+          }
     const DataApi = (toggle) => {
       console.log("clicked"); 
       setLoading(true);
@@ -126,9 +82,9 @@ const Deatils = (props) => {
               el.bids=el.bids.sort(dessort)
               return el;
             })      
-            {toggle === true ? 
+            toggle === true ? 
             resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? 0 : b.bids[0].amount - a.bids[0].amount}) :
-              resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? -1 : a.bids[0].amount - b.bids[0].amount})}
+              resp.sort(function(a, b){return (!a.bids[0] || !b.bids[0])  ? -1 : a.bids[0].amount - b.bids[0].amount})
             setData(resp) 
           },          
             )
